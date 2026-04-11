@@ -13,8 +13,25 @@ class Category
     #[ORM\Column]
     private ?int $id = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $name = null;
+
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    // GET NAME
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    // SET NAME
+    public function setName(string $name): static
+    {
+        $this->name = $name;
+
+        return $this;
     }
 }
